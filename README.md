@@ -1,9 +1,10 @@
 # RK356X
 
-# 默认WiFi配置以下几点需要在编译前打到.config
+
+### P2 M2 默认WiFi配置以下几点需要在编译前打到.config
 
 ```
-Firefly SDK
+# Firefly SDK
 CONFIG_PACKAGE_adbd=y
 CONFIG_PACKAGE_ff_wifi=y
 CONFIG_PACKAGE_rkwifibt=y
