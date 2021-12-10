@@ -602,7 +602,8 @@ mac80211_iw_interface_add() {
 	}
 
 	[ "$rc" = 233 ] && {
-		iw dev "$ifname" del >/dev/null 2>&1
+		# iw dev "$ifname" del >/dev/null 2>&1
+		sleep 0
 		[ "$?" = 0 ] && {
 			sleep 1
 
@@ -726,7 +727,7 @@ mac80211_setup_supplicant() {
 	[ "$enable" = 0 ] && {
 		ubus call wpa_supplicant.${phy} config_remove "{\"iface\":\"$ifname\"}"
 		ip link set dev "$ifname" down
-		iw dev "$ifname" del
+		# iw dev "$ifname" del
 		return 0
 	}
 
@@ -763,7 +764,7 @@ mac80211_setup_supplicant_noctl() {
 	local enable=$1
 	local spobj="$(ubus -S list | grep wpa_supplicant.${ifname})"
 	wpa_supplicant_prepare_interface "$ifname" nl80211 || {
-		iw dev "$ifname" del
+		# iw dev "$ifname" del
 		return 1
 	}
 
@@ -982,7 +983,7 @@ mac80211_vap_cleanup() {
 	for wdev in $vaps; do
 		[ "$service" != "none" ] && ubus call ${service} config_remove "{\"iface\":\"$wdev\"}"
 		ip link set dev "$wdev" down 2>/dev/null
-		iw dev "$wdev" del
+		# iw dev "$wdev" del
 	done
 }
 
