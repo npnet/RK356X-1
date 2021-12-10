@@ -265,7 +265,7 @@ hostapd_common_add_bss_config() {
 	config_add_int acct_port
 	config_add_int acct_interval
 
-	config_add_int bss_load_update_period chan_util_avg_period
+	# config_add_int bss_load_update_period chan_util_avg_period
 
 	config_add_string dae_client
 	config_add_string dae_secret
@@ -548,8 +548,8 @@ hostapd_set_bss_options() {
 	set_default tdls_prohibit 0
 	set_default eapol_version $((wpa & 1))
 	set_default acct_port 1813
-	set_default bss_load_update_period 60
-	set_default chan_util_avg_period 600
+	# set_default bss_load_update_period 60
+	# set_default chan_util_avg_period 600
 	set_default utf8_ssid 1
 	set_default multi_ap 0
 	set_default airtime_bss_weight 0
@@ -571,8 +571,8 @@ hostapd_set_bss_options() {
 	[ "$airtime_bss_limit" -gt 0 ] && append bss_conf "airtime_bss_limit=$airtime_bss_limit" "$N"
 	json_for_each_item append_airtime_sta_weight airtime_sta_weight
 
-	append bss_conf "bss_load_update_period=$bss_load_update_period" "$N"
-	append bss_conf "chan_util_avg_period=$chan_util_avg_period" "$N"
+	# append bss_conf "bss_load_update_period=$bss_load_update_period" "$N"
+	# append bss_conf "chan_util_avg_period=$chan_util_avg_period" "$N"
 	append bss_conf "disassoc_low_ack=$disassoc_low_ack" "$N"
 	append bss_conf "skip_inactivity_poll=$skip_inactivity_poll" "$N"
 	append bss_conf "preamble=$short_preamble" "$N"
