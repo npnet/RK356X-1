@@ -1,0 +1,27 @@
+From a1702ac00f9666282b56412ef839a073a4b31b1c Mon Sep 17 00:00:00 2001
+From: flashcc <cancet@embedfire.com>
+Date: Tue, 28 Dec 2021 19:53:06 +0800
+Subject: [PATCH] emmc
+
+---
+ arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts b/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts
+index adf91a030..d1ee16446 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts
+@@ -34,6 +34,10 @@
+ 	};
+ };
+ 
++&emmc {
++    status = "okay";
++};
++
+ &lan_led {
+ 	label = "nanopi-r2c:green:lan";
+ };
+-- 
+2.25.1
+
