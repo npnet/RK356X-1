@@ -1,5 +1,5 @@
---- a/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c.dts
+--- a/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c-plus.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2c-plus.dts
 @@ -34,6 +34,10 @@
  	};
  };
